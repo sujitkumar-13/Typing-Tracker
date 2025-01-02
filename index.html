@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Playwrite+VN+Guides&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
+    <script src="script.js" defer ></script>
+</head>
+
+<body>
+    <main>
+        <div class="theme">
+            <i class="fa-solid fa-moon" title="change theme"></i>
+        </div>
+        <div class="main-content">
+
+            <div class="container">
+                <div class="content">
+                    <h1 class="heading">Check your typing skills in a minute</h1>
+                    <p class="sub-title">Type away to join 150+ million test takers!</p>
+                </div>
+
+                <form action="/">
+                    <select name="time" id="timeSelector" class="times-select">
+                        <option value="select">SELECT YOUR TEST</option>
+                        <option value="1minute">1 Minute Test</option>
+                        <option value="2minute">2 Minute Test</option>
+                        <option value="3minute">3 Minute Test</option>
+                    </select>
+                    <select name="level" id="levelSelector" class="level-select">
+                        <option value="select">SELECT YOUR LEVEL</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+
+                    <button class="strtbtn">START TEST</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <div class="section-container">
+        <section>
+            <div class="time">
+                <h1>3:00</h1>
+            </div>
+            <div class="para-box">
+                
+                <p class="para"></p>
+            </div>
+            <div class="input-box">
+                <textarea name="text" id="para-text" placeholder="Start Writing..."></textarea>
+            </div>
+        </section>
+    </div>
+    <div class="result-container">
+        <div class="result">
+            <div class="score">
+                <div class="wpm">
+                    <h1>36 <span>WPM</span></h1>
+                </div>
+                <div class="accuracy">
+                    <h1>86% <span>Accuracy</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="reset">
+                <button>RETAKE TEST</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
