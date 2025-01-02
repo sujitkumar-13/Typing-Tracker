@@ -41,4 +41,23 @@ To run this project, you need a modern web browser.
 
 - `index.html`: Contains the structure and layout of the application.
 - `style.css`: Defines the styles and appearance of the application.
-- `script.js`: Implements the functionality and interactivity of the applicatio
+- `script.js`: Implements the functionality and interactivity of the application.
+
+## Acknowledgements
+
+- **Fonts** provided by <a href="https://fonts.google.com/" alt="Googgle Fonts" >Google Fonts</a>
+- **Icons** sourced from <a href ="https://fontawesome.com/" alt ="Font awesome" >Font Awesome</a>
+
+```
+** Save and Commit the README>md File.**
+
+- Save the `README.md` file.
+- Add, commit, and push the changes to your repository:
+
+```bash
+git add README.md
+git commit -m "Add professional README file"
+git push origin main
+```
+
+This will add the README file to your repository with the provided content. If you need further assistance, feel free to ask~
