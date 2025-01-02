@@ -18,15 +18,13 @@ To run this project, you need a modern web browser.
 ### Installation
 
 1. Clone the repository:
+ 
    ```bash
-   
    git clone https://github.com/sujitkumar-13/Typing-Tracker.git
-
-2. Navigate to the project directory:
+3. Navigate to the project directory:
    
     ```bash
    cd Typing-Tracker
-    
 4. Open `index.html`  in your web browser to start using the Typing Tracker.
 
 ## Usage
