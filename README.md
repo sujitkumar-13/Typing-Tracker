@@ -22,7 +22,7 @@ To run this project, you need a modern web browser.
    
    git clone https://github.com/sujitkumar-13/Typing-Tracker.git
 
-Navigate to the project directory:
-   ```bash
-cd Typing-Tracker
-
+1. Navigate to the project directory:
+    ```bash
+   cd Typing-Tracker
+2.
