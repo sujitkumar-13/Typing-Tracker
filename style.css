@@ -149,7 +149,6 @@ section {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
     display: none;
-    /* border: 1px solid red; */
 }
 
 section.block {
@@ -185,7 +184,6 @@ section.block {
     border-radius: 15px;
     resize: none;
     height: 280px;
-    ;
     outline: none;
     margin-top: 30px;
     font-family: "Playpen Sans", serif;
