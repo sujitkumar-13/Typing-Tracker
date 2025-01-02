@@ -60,4 +60,4 @@ git commit -m "Add professional README file"
 git push origin main
 ```
 
-This will add the README file to your repository with the provided content. If you need further assistance, feel free to ask~
+This will add the README file to your repository with the provided content. If you need further assistance, feel free to ask!
