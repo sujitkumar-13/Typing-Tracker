@@ -1,3 +1,4 @@
+// DOM elements selection
 const startBtn = document.querySelector('.strtbtn');
 const timeSelector = document.getElementById('timeSelector');
 const levelSelector = document.getElementById('levelSelector');
@@ -15,6 +16,7 @@ const select2 = document.querySelector('.level-select')
 const score = document.querySelector('.result-container');
 const resetbtn = document.querySelector('.reset')
 
+// Arrays containing paragraphs for different difficulty levels
 
 const easyParagraphs = [
     "The beach is a wonderful place to visit. The sand is soft under your feet. The waves crash gently on the shore. Children build sandcastles with buckets and shovels. People love to swim in the sea. Some bring umbrellas to sit under the shade. Many enjoy walking along the shore and collecting shells. The sun shines brightly, making the water sparkle. Birds fly overhead, looking for food. A day at the beach is always fun and relaxing.",
@@ -55,7 +57,11 @@ const hardParagraphs = [
     'Space exploration an awe inspiring endeavor pushes the boundaries of human capability. From Apollo missions to Mars rovers, humanity’s quest for knowledge continues. Satellites improve communication and weather forecasting, while telescopes uncover distant galaxies. However, the cost and risks of space exploration spark debates. Despite challenges, it reflects humanity’s innate curiosity and desire to understand the cosmos.',
 ];
 
+// Switch theme event listener
+
 moon.addEventListener('click', () => {
+
+    // Toggles the moon/sun icon for switching themes and adjusts corresponding elements' styles
     if (moon.classList.contains('fa-moon')) {
         moon.classList.replace('fa-moon', 'fa-sun');
         moon.setAttribute('title', 'Switch to dark theme');
@@ -73,7 +79,7 @@ moon.addEventListener('click', () => {
 });
 
 
-// Start button event listener
+// Function to get a paragraph based on selected difficulty level
 
 function getParagraphByLevel(level) {
     switch (level) {
@@ -88,45 +94,55 @@ function getParagraphByLevel(level) {
     }
 }
 
+// Start button event listener
+
 startBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
+    // Get the selected time and level from the dropdowns
     const selectedTime = timeSelector.value;
     const selectedLevel = levelSelector.value;
 
+    // Ensure valid time and level are selected
     if (selectedTime === 'select' || selectedLevel === 'select') {
         alert('Please select a valid test time and level.');
         return;
     }
 
+    // Set the time for the test based on the selection
     timeLeft = timeMapping[selectedTime];  
     const paragraph = getParagraphByLevel(selectedLevel);
     paraBox.textContent = paragraph;
 
+    // Show the typing section and hide the main content
     mainContent.classList.add('remove');
     section.classList.add('block');
 
+    // Start the timer
     startTimer();
 });
 
+// Timer and word counters
 let timer;
 let wordsTyped = 0;
 let totalWords = 0;
 let timeLeft;
 
+// Mapping for time selections to seconds
 const timeMapping = {
     '1minute': 60,
     '2minute': 120, 
     '3minute': 180,
 };
 
-
+// Function to format time into mm:ss
 function formatTime(time) {
     const minutes = Math.floor(time / 60);
     const seconds = time % 60;
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
+// Function to start the timer
 function startTimer() {
     timerDisplay.textContent = formatTime(timeLeft);
     timer = setInterval(() => {
@@ -139,6 +155,7 @@ function startTimer() {
     }, 1000);
 }
 
+// Event listener for user input (typing)
 inputBox.addEventListener('input', () => {
     const inputText = inputBox.value;
     const paragraph = paraBox.textContent;
@@ -147,10 +164,13 @@ inputBox.addEventListener('input', () => {
 
     paraBox.innerHTML = '';
 
+    // Loop through each word in the paragraph and apply color based on matching input
     words.forEach((word, index) => {
         const wordSpan = document.createElement('span');
         wordSpan.textContent = word + ' ';
         wordsTyped++
+
+         // Check for word match and color accordingly
         if (inputWords[index] === '') {
             wordSpan.style.color = 'red';
         }else if (inputWords[index] === word) {
@@ -168,24 +188,30 @@ inputBox.addEventListener('input', () => {
 
 });
 
+// Disable paste to avoid inaccurate results
 inputBox.addEventListener('paste', (e) => {
     e.preventDefault(); 
 });
 
+// Function to calculate results after timer ends
 function calculateResults() {
     clearInterval(timer);
 
+    // Hide the typing section and show the results
     section.classList.remove('block');
     score.style.display = 'block';
 
+    // Get the total time based on the selected option
     const totalTime = timeSelector.value === 'select' ? 0 : {
         '1minute': 60,
         '2minute': 120,
         '3minute': 180,
     }[timeSelector.value];
 
+    // Calculate words per minute (WPM)
     let wordsPerMinute = Math.round((wordsTyped / totalTime) * 60);
 
+    // Count correct words typed
     const paragraphWords = paraBox.textContent.trim().split(/\s+/); 
     const inputWords = inputBox.value.trim().split(/\s+/); 
 
@@ -197,14 +223,17 @@ function calculateResults() {
         }
     }
 
+    // Calculate accuracy as a percentage
     const accuracy = Math.round((correctWords / paragraphWords.length) * 100);
 
+    // Display WPM and accuracy in the results
     document.querySelector('.wpm h1').innerHTML = `${wordsPerMinute} <span>WPM</span>`;
     document.querySelector('.accuracy h1').innerHTML = `${accuracy}% <span>Accuracy</span>`;
 }
 
-
+// Reset button event listener
 document.querySelector('.reset button').addEventListener('click', () => {
+    // Hide score section and reset the typing test
     score.style.display = 'none';
     mainContent.classList.remove('remove');
     inputBox.value = '';
