@@ -39,3 +39,6 @@ To run this project, you need a modern web browser.
 
 ## File Structure
 
+- `index.html`: Contains the structure and layout of the application.
+- `style.css`: Defines the styles and appearance of the application.
+- `script.js`: Implements the functionality and interactivity of the applicatio
