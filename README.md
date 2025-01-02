@@ -22,7 +22,20 @@ To run this project, you need a modern web browser.
    
    git clone https://github.com/sujitkumar-13/Typing-Tracker.git
 
-1. Navigate to the project directory:
+2. Navigate to the project directory:
+   
     ```bash
    cd Typing-Tracker
-2.
+    
+4. Open `index.html`  in your web browser to start using the Typing Tracker.
+
+## Usage
+1. Open the application in your web browser.
+2. Select the test duration and difficulty level from the dropdown menus.
+3. Click the "START TEST" button to begin the typing test.
+4. Type the displayed paragraph in the textarea.
+5. The timer will count down, and your typing speed and accuracy will be calculated at the end of the test.
+6. View your results and click "RETAKE TEST" to try again.
+
+## File Structure
+
